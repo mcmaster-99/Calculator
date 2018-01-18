@@ -1,0 +1,30 @@
+{
+  "name": "weather-app",
+  "version": "1.2.0",
+  "description": "displays the current weather of a user's location",
+  "main": "script.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcmaster-99/Local-Weather.git"
+  },
+  "author": "Bilal Hjiouaj",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest"
+  },
+  "bugs": {
+    "url": "https://github.com/mcmaster-99/Local-Weather/issues"
+  },
+  "homepage": "https://github.com/mcmaster-99/Local-Weather#readme"
+}

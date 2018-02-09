@@ -7,7 +7,7 @@ var gulp = require('gulp');
 
 var jsSource = ['scripts/*.js'],
 	sassSource = ['styles/*.scss'],
-	htmlSource = ['*.html']
+	htmlSource = ['index.html']
 	output = 'assets';
 
 

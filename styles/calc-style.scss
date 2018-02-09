@@ -34,12 +34,12 @@ body {
 
 .wrapper {
     display: grid;
-    grid-row-gap: 5px;
-    grid-template-columns: 55px 60px 60px 60px;
-    grid-template-rows: 55px 55px 55px 55px 45px;
+    grid-gap: 0px;
+    margin-top: 10px;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(6, 55px);
     text-align: center;
-    line-height: 100px; /*keeps numbers to the bottom*/
-
+    line-height: 100px;
 }
 .buttonC {
     grid-column: 1 / 2;
@@ -58,27 +58,31 @@ body {
 }
 
 
-.numbers{
-    font-family: $numbers_font;
-    font-size: 20px;
-}
-/* STYLING FOR THE ROUND BUTTONS */
+
+/* STYLING FOR THE BUTTONS */
 %roundButtonStyling {
     width: 45px;
     height: 45px;
-    line-height: 45px;
+    line-height: 30px;
     border-radius: 50px;
     margin-top: 30px;
     background-color: $roundButtonColor;
 }
-.roundButtons {
+.roundButtons, .numbers, .buttonPeriod, .btn {
     @extend %roundButtonStyling;
 }
+.numbers, .buttonPeriod {
+    background-color: #fafafa;
+    font-family: $numbers_font;
+    font-size: 18px;
+}
+
+
 /* EQUAL BUTTON STYLING */
 .longRoundButton {
     @extend %roundButtonStyling;
-    height: 90px;
-    line-height: 90px; // centers the [=] sign
+    height: 95px;
+    line-height: 75px; // centers the [=] sign
     background-color: #ff8946;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

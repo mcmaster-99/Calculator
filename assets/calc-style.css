@@ -4,6 +4,11 @@ h1 {
   color: navy;
   font-family: "Audiowide", cursive; }
 
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px; }
+
 body {
   background-color: #eaf8ed; }
 
@@ -15,7 +20,7 @@ body {
   font-size: 35px; }
 
 .container {
-  margin: 125px auto 0 auto;
+  margin: 100px auto 0 auto;
   width: 250px;
   height: 375px;
   border-radius: 0px;

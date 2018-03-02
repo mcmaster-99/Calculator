@@ -19,6 +19,28 @@ $(document).ready(function() {
     }
 
 
+
+    // ===========================
+    // ====== NUMPAD INPUT =======
+    // ===========================
+    $(document).keypress(function(e) {
+
+        e.preventDefault();
+        console.log(e.keyCode);
+
+        if (e.keyCode >= 96 && e.keyCode <= 105) {
+            e.preventDefault();
+            result.push(e.keyCode);
+            $("#output").html(result);
+        }
+
+    });
+
+    document.addEventListener("keydown", function(event) {
+        console.log(event.which);
+    })
+
+
     /*
     ==============================
     ====== BUTTON FUNCTIONS ======

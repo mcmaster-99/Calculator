@@ -18,15 +18,8 @@ $(document).ready(function() {
         result = [];
     }
 
-
-    /*
-    ==============================
-    ====== BUTTON FUNCTIONS ======
-    ==============================
-    */
-
-    $(".buttonEqual").click(function(){
-
+    // Calculates the current equation
+    function carryOutOperation() {
         // variables specific to the [=] button
         var OpPos = 0,
             op1 = [],
@@ -55,11 +48,14 @@ $(document).ready(function() {
             op2.splice(y, 0, result[y]);
         }
         
+        // Clear stack to output result
         clearStack();
+        // Join left-hand side
         op1 = op1.join('');
+        // Join right-hand side
         op2 = op2.join('');
 
-        // switch statement figures out which operator is being
+        // switch statement figures out which operator is being used
         // and carries out the problem and stores the solution 
         // back in result.
         switch (operator[0]) {
@@ -82,7 +78,74 @@ $(document).ready(function() {
         // Outputs the result stack array to the #result id.
         $("#output").html(result);
         
+    }
+
+
+
+    // ===========================
+    // ====== NUMPAD INPUT =======
+    // ===========================
+    $(document).on("keypress keyup keydown", function(e) {
+
+        // Store type of event in eventType
+        var eventType = e.type;
+
+        // if any number is pressed on keyboard/numpad
+        switch (eventType) {
+            case 'keypress':
+
+                var key = e.which || e.keyCode;
+
+                // Convert charCode to corresponding number
+                var num = String.fromCharCode(key);
+
+                if (key >= 48 && key <= 57) {
+                    result.push(num);
+                    $("#output").html(result); 
+                } else if (key == 42) { // if key is an asterisk 
+                    result.push("*");
+                    $("#output").html(result);
+                } else if (key == 43) { // if key is a plus operator
+                    result.push("+");
+                    $("#output").html(result);
+                } else if (key == 45) { // if key is a minus operator
+                    result.push("-");
+                    $("#output").html(result);
+                } else if (key == 47) { // if key is a division operator
+                    result.push("/");
+                    $("#output").html(result);
+                } else if (key == 46) { // if key is a period
+                    result.push(".");
+                    $("#output").html(result);
+                } else if (key == 13) { // if key is an equal
+                    carryOutOperation();
+                } 
+                break;
+            case 'keydown':
+                if (e.which == 8) {
+                    result.pop();
+                    $("#output").html(result)
+                }
+                break;
+            default:
+                break;
+        }
+
     });
+
+
+    /*
+    ==============================
+    ====== BUTTON FUNCTIONS ======
+    ==============================
+    */
+
+    $(".buttonEqual").click(function(){
+
+        carryOutOperation();
+        
+    }); // End button equal click function
+
 
     // clear button function
     $(".buttonC").click(function(){

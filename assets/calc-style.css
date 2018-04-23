@@ -14,10 +14,11 @@ body {
 
 #output {
   width: 230px;
-  height: 75px;
+  height: 35px;
   background-color: #fafafa;
   text-align: right;
-  font-size: 35px; }
+  font-size: 35px;
+  overflow: hidden; }
 
 .container {
   margin: 100px auto 0 auto;

@@ -4,12 +4,11 @@ JAVASCRIPT CALCULATOR
 
 - What the application does:
 
-Carries out simple arithmetic calculations.
-This project is from the FreeCodeCamp front end
-curriculum. 
+Carries out simple arithmetic calculations using the stack data structure.
 
 
-- Tools Used:
+
+- Tools used in development:
 1. HTML
 2. CSS
 3. Javascript
